@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test-01</title>
+</head>
+
+<body>
+    <style>
+        .btn1 {
+            background-color: yellow;
+
+        }
+
+        .btn2 {
+            background-color: orange;
+        }
+
+        ;
+    </style>
+    <p>Adault Plain Cotton T-shirt</p>
+    <p>Price : 7.99$</p>
+    <button class="btn1" onclick=" alert('Added')"> To Cart</button>
+    <button id="btn2"> But Now </button>
+
+    <script>
+        document.getElementById("btn2").addEventListener("click", function () {
+            // Log "Loading" to the console
+            console.log("Loading");
+
+            // Simulate a delay for the loading process
+            setTimeout(function () {
+                // Show "Purchased" popup after the delay
+                alert("Purchased");
+            }, 1000); // 2-second delay before showing the "Purchased" popup
+        });
+    </script>
+</body>
+
+</html>

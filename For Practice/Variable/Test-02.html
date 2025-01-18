@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <input type="text" id="display" disabled><br>
+    <button onclick="document.getElementById('display').value += '1'">1</button>
+    <button onclick="document.getElementById('display').value += '2'">2</button>
+    <button onclick="document.getElementById('display').value += '+'">+</button>
+    <button onclick="calculate()">=</button>
+
+    <script>
+        let firstNumber = '';
+        let operator = '';
+        let currentInput = '';
+
+        function calculate() {
+            let displayValue = document.getElementById('display').value;
+            let numbers = displayValue.split(operator);
+            let result;
+
+            if (operator === '+') {
+                result = parseFloat(numbers[0]) + parseFloat(numbers[1]);
+            }
+
+            document.getElementById('display').value = result;
+            console.log('Result: ' + result); // Display result in the console
+        }
+
+        // Keep track of operator click to trigger split
+        document.querySelectorAll('button').forEach(function (btn) {
+            btn.addEventListener('click', function() {
+                if (this.innerText === '+') {
+                    operator = '+';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
